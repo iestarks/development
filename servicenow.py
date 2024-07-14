@@ -4,7 +4,7 @@ from requests.auth import HTTPBasicAuth
 # Replace these variables with your actual details
 instance = "your_instance_name"
 user = "ncsu.ee2017@gmail.com"
-pwd = "Hond@135"
+pwd = $snpasswd
 incident_sys_id = "incident_sys_id_here"  # Use sys_id or a query to identify the specific incident
 
 # ServiceNow API endpoint for the incident table

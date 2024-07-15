@@ -94,7 +94,7 @@ nic = network_client.network_interfaces.begin_create_or_update(
 vm_parameters = {
     'location': location,  # replace with your location
     'hardware_profile': {
-        'vm_size': 'Standard_D2_v2'  # replace with your VM size
+        'vm_size': 'Standard_D8s_v3'  # replace with your VM size
     },
     'storage_profile': {
         'image_reference': {

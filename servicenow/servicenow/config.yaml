@@ -1,0 +1,11 @@
+
+servicenow:
+  instance_url: "https://dev249066.service-now.com" 
+  api_endpoint: "/api/now/table/incident"
+  username:  "admin"
+  password:  ""
+
+# servicenow:
+#   url: "https://dev249066.service-now.com/api/now/table/incident"
+#   username:  "admin"
+#   password:  "dv0%KokS1*DV"

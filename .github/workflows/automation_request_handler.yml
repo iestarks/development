@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Send notification email
-      uses: dawidd6/action-send-mail@v3
+      uses: atlassian/gajira-cli@master
       with:
         server_address: smtp.gmail.com
         server_port: 465

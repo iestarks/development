@@ -1,6 +1,6 @@
 ---
-name: Ptoject Smooth Ride Intake Form
-about: To allow requestors requiring assistance for automation services
+name: Project Smooth Ride Intake Form
+about: To allow requestors requiring assistance with automation services
 title: ''
 labels: enhancement
 assignees: iestarks

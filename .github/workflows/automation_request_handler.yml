@@ -12,15 +12,24 @@ jobs:
     steps:
     - name: Send notification email
       uses: atlassian/gajira-cli@master
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: New Ansible Automation Request
-        body: |
-          A new automation request has been submitted:
-          - **Title**: ${{ github.event.issue.title }}
-          - **Link**: ${{ github.event.issue.html_url }}
-        to: ncsu.ee2017@gmail.com
-        from: GitHub Actions <noreply@example.com>
+      env:
+        TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+      run: |
+        curl -H 'Content-Type: application/json' -d '{
+          "@type": "MessageCard",
+          "@context": "http://schema.org/extensions",
+          "themeColor": "0076D7",
+          "summary": "New Ansible Automation Request",
+          "sections": [{
+            "activityTitle": "New Ansible Automation Request",
+            "activitySubtitle": "GitHub Issue Notification",
+            "facts": [{
+              "name": "Title:",
+              "value": "${{ github.event.issue.title }}"
+            }, {
+              "name": "Link:",
+              "value": "<a href=\"${{ github.event.issue.html_url }}\">View on GitHub</a>"
+            }],
+            "markdown": true
+          }]
+        }' $TEAMS_WEBHOOK_URL

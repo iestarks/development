@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 pyyaml = "^6.0.1"
+pytest = "^8.2.2"
+msal = "^1.29.0"
 
 
 [build-system]
